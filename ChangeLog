@@ -1,4 +1,13 @@
-== 1.1.0 [2016-08-06]
+
+== 1.1.0 [2017-03-07]
+
+* Added ability to append extra data to all tag pages. (tfe)
+* Provides compatibility to the current jekyll (3.4.1).
+* A few fixes. (felipe)
+* Some documentation improvements. (wsmoak, jonathanpberger)
+* Prooves who is the worst open source maintainer. (pattex ^__^)
+
+== 1.1.0-felipe [2016-08-06]
 
 * call to_s on tags so as to avoid errors on non-ascii tags
 * optionally add a config option: tag_hierarchy_file: pointing to a YAML file containing tag hierarchy

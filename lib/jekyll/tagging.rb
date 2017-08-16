@@ -80,6 +80,7 @@ module Jekyll
       self.class.types.each { |type|
         if layout = site.config["tag_#{type}_layout"]
           data = { 'layout' => layout, 'posts' => posts.sort.reverse!, 'tag' => tag }
+          data.merge!(site.config["tag_#{type}_data"] || {})
 
           name = yield data if block_given?
           name ||= tag
@@ -172,7 +173,7 @@ module Jekyll
 
   end
 
-  module Filters
+  module TaggingFilters
 
     include Helpers
 
@@ -212,3 +213,5 @@ module Jekyll
   end
 
 end
+
+Liquid::Template.register_filter(Jekyll::TaggingFilters)

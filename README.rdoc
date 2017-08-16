@@ -4,12 +4,23 @@ By Arne Eilermann <mailto:arne@kleinerdrei.net> and Jens Wille <mailto:jens.will
 
 jekyll-tagging is a Jekyll plugin, to add a tag cloud and per tag pages plus feeds to your Jekyll generated Website.
 
+== Tags
+This plugin does not reinvent Jekyll's tagging feature. It just makes it easy to use.
+<https://jekyllrb.com/docs/frontmatter/>
+
+Add space-delimited lowercase tags to FrontMatter, e.g.
+
+  ---
+  author: Willow Rosenberg
+  tags: feminism anti-capitalism witchcraft
+  ---
+
 == Usage
 
 Install it:
 
   gem install jekyll-tagging
-  
+
 Add this line to your Jekyll project's Gemfile:
 
   gem 'jekyll-tagging'
@@ -25,7 +36,7 @@ And in your <tt>_config.yml</tt> you have to define your layout used to generate
 
 This will look for <tt>_layouts/tag_page.html</tt>, and use it to generate tag pages into the <tt>_site/tag</tt> directory.
 
-Now you have a new filter called <tt>tag_cloud</tt> which you can use with the <tt>site</tt> object as argument in your layout to get a cloud of all your site's tags. The tags are linked to their related tag page. Furthermore, you have a <tt>tags</tt> filter which you can feed with a <tt>post</tt> or a <tt>site</tt> object to get a link list of all its tags.
+Now you have a new filter called <tt>tag_cloud</tt> which you can use with the <tt>site</tt> object as argument in your layout to get a cloud of all your site's tags. The tags are linked to their related tag page. Furthermore, you have a <tt>tags</tt> filter which you can feed with a <tt>post</tt> or a <tt>page</tt> object to get a link list of all its tags.
 
 You can optionally define a per tag Atom/RSS feed.  In your <tt>_config.yml</tt> define the following:
 
@@ -43,6 +54,14 @@ If your Jekyll <tt>permalink</tt> configuration is set to something other than <
 === Ignoring tags
 
 Sometimes you don't want tag pages generated for certain pages. That's ok! Just add <tt>ignored_tags: [tags,to,ignore]</tt> to your <tt>_config.yml</tt>
+
+=== Extra data on tag pages
+
+You can attach extra data to generated tag pages by specifying <tt>tag_page_data</tt> in <tt>_config.yml</tt> (this also works for <tt>tag_feed_data</tt>). For example, you might want to exclude tag pages from being picked up by `jekyll-sitemap`:
+
+  tag_page_data:
+    sitemap: false
+
 === Example tag page layout
 
 (Save this to <tt>_layouts/tag_page.html</tt> if using the <tt>_config.yml</tt> snippet above.)
@@ -63,6 +82,8 @@ Sometimes you don't want tag pages generated for certain pages. That's ok! Just 
 
 
 === Example layout of an Atom feed
+
+(Save this to <tt>_layouts/tag_feed.xml</tt> if using the <tt>_config.yml</tt> snippet above.)
 
   ---
   layout: nil
