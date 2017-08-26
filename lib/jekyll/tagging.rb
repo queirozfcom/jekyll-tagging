@@ -130,6 +130,16 @@ module Jekyll
 
         tags = site.tags
 
+        # need to do this otherwise parent tags with no posts of
+        # their own will have no page
+        tag_hierarchy.keys.foreach{ |parent_tag|
+          tag_downcased = parent_tag.downcase 
+          
+          unless tags.key?(tag_downcased)
+            tags[tag_downcased] = Array.new
+          end
+        }
+
         tags.each { |tag, posts_for_this_tag| 
         
           child_tags = expand_tags(tag,tag_hierarchy)

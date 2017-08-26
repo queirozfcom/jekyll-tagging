@@ -1,4 +1,8 @@
 
+== 1.1.1-felipe [2017-08-20]
+
+* Include tags which have no posts of their own (but have child tags)
+
 == 1.1.0 [2017-03-07]
 
 * Added ability to append extra data to all tag pages. (tfe)
