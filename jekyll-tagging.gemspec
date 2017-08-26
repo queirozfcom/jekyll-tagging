@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = ["ChangeLog".freeze, "README.rdoc".freeze, "Rakefile".freeze, "lib/jekyll/tagging.rb".freeze, "lib/jekyll/tagging/version.rb".freeze]
   s.homepage = "http://github.com/pattex/jekyll-tagging".freeze
   s.licenses = ["MIT".freeze]
-  s.post_install_message = "\njekyll-tagging-1.1.0 == 1.1.1-felipe [2017-08-20]: \n\n Include tags which have no posts of their own (but have child tags) \n\n [2017-03-07]:\n\n* Added ability to append extra data to all tag pages. (tfe)\n* Provides compatibility to the current jekyll (3.4.1).\n* A few fixes. (felipe)\n* Some documentation improvements. (wsmoak, jonathanpberger)\n* Prooves who is the worst open source maintainer. (pattex ^__^)\n\n".freeze
+  s.post_install_message = "\njekyll-tagging-1.1.0 == 1.1.1-felipe \n\n [2017-08-20]: \n\n*Include tags which have no posts of their own (but have child tags) \n\n [2017-03-07]:\n\n* Added ability to append extra data to all tag pages. (tfe)\n* Provides compatibility to the current jekyll (3.4.1).\n* A few fixes. (felipe)\n* Some documentation improvements. (wsmoak, jonathanpberger)\n* Prooves who is the worst open source maintainer. (pattex ^__^)\n\n".freeze
   s.rdoc_options = ["--title".freeze, "jekyll-tagging Application documentation (v1.1.1-felipe)".freeze, "--charset".freeze, "UTF-8".freeze, "--line-numbers".freeze, "--all".freeze, "--main".freeze, "ChangeLog".freeze]
   s.rubygems_version = "2.6.10".freeze
   s.summary = "Jekyll plugin to automatically generate a tag cloud and tag pages.".freeze
