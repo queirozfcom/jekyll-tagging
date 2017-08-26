@@ -132,7 +132,7 @@ module Jekyll
 
         # need to do this otherwise parent tags with no posts of
         # their own will have no page
-        tag_hierarchy.keys.foreach{ |parent_tag|
+        tag_hierarchy.keys.each{ |parent_tag|
           tag_downcased = parent_tag.downcase 
           
           unless tags.key?(tag_downcased)
